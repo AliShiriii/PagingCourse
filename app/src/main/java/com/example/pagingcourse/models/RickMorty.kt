@@ -1,5 +1,9 @@
 package com.example.pagingcourse.models
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 data class RickMorty(
     val created: String,
     val episode: List<String>,
@@ -11,4 +15,4 @@ data class RickMorty(
     val status: String,
     val type: String,
     val url: String
-)
+): Parcelable

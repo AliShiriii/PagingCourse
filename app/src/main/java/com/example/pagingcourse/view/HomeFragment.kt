@@ -8,17 +8,18 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.example.pagingcourse.R
 import com.example.pagingcourse.adapter.RickMortyAdapter
-import com.example.pagingcourse.databinding.FragmentRichMortyBinding
+import com.example.pagingcourse.databinding.FragmentHomeBinding
 import com.example.pagingcourse.viewModel.RickMortyViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class RichMortyFragment : Fragment() {
+class HomeFragment : Fragment(R.layout.fragment_home) {
 
-    private var _binding: FragmentRichMortyBinding? = null
+    private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
     private val viewModel: RickMortyViewModel by viewModels()
@@ -31,7 +32,7 @@ class RichMortyFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
 
-        _binding = FragmentRichMortyBinding.inflate(inflater, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         return binding.root
     }
