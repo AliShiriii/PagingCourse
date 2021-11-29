@@ -18,7 +18,6 @@ class RickMortyAdapter : PagingDataAdapter<RickMorty, RickMortyAdapter.RickViewH
         fun bind(rickMorty: RickMorty){
 
             binding.title.text = rickMorty.name
-            
             Glide.with(itemView)
                 .load(rickMorty.image)
                 .into(binding.imageView)
@@ -37,9 +36,7 @@ class RickMortyAdapter : PagingDataAdapter<RickMorty, RickMortyAdapter.RickViewH
             override fun areContentsTheSame(oldItem: RickMorty, newItem: RickMorty): Boolean =
 
                 oldItem == newItem
-
         }
-
     }
 
     override fun onBindViewHolder(holder: RickViewHolder, position: Int) {
