@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.pagingcourse.R
+import com.example.pagingcourse.adapter.LoadingStateAdapter
 import com.example.pagingcourse.adapter.RickMortyAdapter
 import com.example.pagingcourse.databinding.FragmentHomeBinding
 import com.example.pagingcourse.viewModel.RickMortyViewModel
@@ -52,10 +54,14 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         binding.recyclerView.apply {
 
-            layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-            adapter = rickAdapter
-
             setHasFixedSize(true)
+            layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+            adapter = rickAdapter.withLoadStateHeaderAndFooter(
+
+                header = LoadingStateAdapter{rickAdapter.retry()},
+                footer = LoadingStateAdapter{rickAdapter.retry()}
+
+            )
 
         }
 
@@ -66,7 +72,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         lifecycleScope.launch {
             viewModel.rickMortyData.collect { pagingData->
+                binding.apply {
 
+                    recyclerView.isVisible = true
+                   progressBars.isVisible = false
+
+                }
                 rickAdapter.submitData(pagingData)
 
             }

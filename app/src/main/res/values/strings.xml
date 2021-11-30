@@ -5,5 +5,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_ingredients">Title Ingredients</string>
     <string name="recipe_references">Recipe References</string>
+    <string name="retry">retry</string>
+    <string name="please_try_again">please try again</string>
     <!-- TODO: Remove or change this placeholder text -->
 </resources>
