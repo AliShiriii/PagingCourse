@@ -1,4 +1,4 @@
-package com.example.pagingcourse.models
+package com.example.pagingcourse.model
 
 data class ResponseApi(
     val results: List<RickMorty>

@@ -5,12 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.pagingcourse.R
 import com.example.pagingcourse.databinding.FragmentDettailsBinding
-import com.example.pagingcourse.models.RickMorty
+import com.example.pagingcourse.model.RickMorty
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -1,4 +1,4 @@
-package com.example.pagingcourse.models
+package com.example.pagingcourse.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.pagingcourse.databinding.RickMortyItemsBinding
-import com.example.pagingcourse.models.RickMorty
+import com.example.pagingcourse.model.RickMorty
 import com.example.pagingcourse.view.HomeFragmentDirections
 
 class RickMortyAdapter : PagingDataAdapter<RickMorty, RickMortyAdapter.RickViewHolder>(diffCallBack) {

@@ -3,7 +3,7 @@ package com.example.pagingcourse.paging
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.example.pagingcourse.api.ApiService
-import com.example.pagingcourse.models.RickMorty
+import com.example.pagingcourse.model.RickMorty
 import retrofit2.HttpException
 import java.io.IOException
 import javax.inject.Inject
